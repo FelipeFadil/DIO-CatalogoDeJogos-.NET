@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiCatalogoJogos</name>
+    </assembly>
+    <members>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.GamesController.GetGame(System.Int32,System.Int32)">
+            <summary>
+            Search all games paged
+            </summary>
+            <remarks>
+            Unable to return games without pagination
+            </remarks>
+            <param name="page">Indicates which page is being consulted. At least 1</param>
+            <param name="quantity">Indicates the number of records per page. At least 1 and at most 50</param>
+            <response code="200">Return a list of games</response>
+            <response code="204">If there are no games</response>
+        </member>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.GamesController.GetGame(System.Guid)">
+            <summary>
+            Search a game by id
+            </summary>
+            <param name="idGame">Searched game id</param>
+            <response code="200">Return the filtered game</response>
+            <response code="204">If there are no game with this id</response>
+        </member>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.GamesController.InsertGame(ApiCatalogoJogos.InputModel.GameInputModel)">
+            <summary>
+            Add a game
+            </summary>
+            <param name="gameInputModel"></param>
+            <response code="200">Add the game to the DataBase</response>
+        </member>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.GamesController.UpdateGame(System.Guid,ApiCatalogoJogos.InputModel.GameInputModel)">
+            <summary>
+            Update all game attributes
+            </summary>
+            <param name="idGame">Id of the game that will be updated</param>
+            <param name="gameInputModel">New values of the game</param>
+            <response code="200">Return the updated game</response>
+            <response code="204">If there are no game with this id</response>
+        </member>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.GamesController.UpdateGame(System.Guid,System.Double)">
+            <summary>
+            Update the price of a game
+            </summary>
+            <param name="idGame">Id of the game that will be updated</param>
+            <param name="price">New price value</param>
+            <response code="200">Return the updated game</response>
+            <response code="204">If there are no game with this id</response>
+        </member>
+        <member name="M:ApiCatalogoJogos.Controllers.V1.GamesController.DeleteGame(System.Guid)">
+            <summary>
+            Delete a game by id
+            </summary>
+            <param name="idGame">Id of the game that will be deleted</param>
+            <response code="200">Return the deleted game</response>
+            <response code="204">If there are no game with this id</response>
+        </member>
+    </members>
+</doc>
